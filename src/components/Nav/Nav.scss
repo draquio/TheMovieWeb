@@ -1,0 +1,24 @@
+.nav_bar{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    &_list{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            a{
+                text-decoration: none;
+            }
+        }
+
+    }
+}

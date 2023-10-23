@@ -1,0 +1,1 @@
+export {TrendingSerie} from "./TrendingSerie"

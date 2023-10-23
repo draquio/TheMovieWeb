@@ -1,0 +1,1 @@
+export {TrendingMovie} from "./TrendingMovie"

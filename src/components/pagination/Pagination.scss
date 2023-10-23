@@ -1,0 +1,24 @@
+@import "../../scss/index.scss";
+.pagination_container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    p{
+        display: flex;
+        background-color: $text-light;
+        color:$background;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        border-radius: 5px;
+        justify-content: center;
+        cursor: pointer;
+        &.active{
+            background-color: #5425ae;
+            color:$text-light;
+            box-shadow: 0 0 1rem #5425ae;
+        }
+    }
+}

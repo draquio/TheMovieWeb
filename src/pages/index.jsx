@@ -1,0 +1,5 @@
+export {Home} from "./home"
+export {Movies} from "./movies"
+export {Series} from "./series"
+export {Search} from "./search"
+export {SinglePage} from "./singlepage"

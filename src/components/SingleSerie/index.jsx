@@ -1,0 +1,1 @@
+export { SingleSerie } from "./SingleSerie";

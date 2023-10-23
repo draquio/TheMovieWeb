@@ -1,0 +1,6 @@
+export * from "./Movies"
+export * from "./Nav"
+export * from "./Series"
+export * from "./SingleMovie"
+export * from "./SingleSerie"
+export * from "./pagination"

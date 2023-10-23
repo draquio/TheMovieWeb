@@ -1,0 +1,27 @@
+@import "../../scss/index.scss";
+.title_contaniner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #bfbfbf4d;
+  margin-bottom: 20px;
+  .title_section {
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+  .view_more {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    &:hover {
+      color: $hover-text-light;
+    }
+    .icon_title {
+      font-size: 20px;
+      margin-right: 6px;
+      color: $hover-text-light;
+    }
+  }
+}
