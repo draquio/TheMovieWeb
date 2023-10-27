@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Movie as MovieClass } from "../../../services/Movie";
 import { TrendingMovieItem } from "./TrendingMovieItem";
-import "../../scss/singleitem.scss";
-import "../../scss/titles.scss";
 import { AiOutlinePlus } from 'react-icons/ai';
 import { Link } from "react-router-dom";
+import { Loader } from "../../Loader/Loader";
+import {Background} from "../../Background"
 
 export function TrendingMovie() {
     const [movies, setMovies] = useState(null);
@@ -16,15 +16,17 @@ export function TrendingMovie() {
           if (response) {
             const limitmovies = response.slice(0,12);
             setMovies(limitmovies);
-            window.scrollTo(0, 0);
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
           }
         } catch (error) {
           console.error(error);
         }
       })();
     }, []);
-    if (!movies)
-      return <span className="loading loading-spinner loading-lg"></span>;
+    if (!movies || movies.length === 0) return <Loader />
     return (
       <>
       <div className="title_contaniner">
@@ -38,6 +40,7 @@ export function TrendingMovie() {
             </article>
           ))}
         </section>
+        <Background movie={movies[0]} />
       </>
     );
 }

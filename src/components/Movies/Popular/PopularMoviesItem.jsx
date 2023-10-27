@@ -1,7 +1,8 @@
 import { ENV, createPath } from "../../../utils";
 import { Link } from "react-router-dom";
-import "./PopularMovies.scss";
 import { BsPlayFill } from "react-icons/bs";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import defaultimg from "../../../assets/default.webp";
 
 export function PopularMoviesItem(props) {
   const { movie } = props;
@@ -12,9 +13,10 @@ export function PopularMoviesItem(props) {
     <Link to={url}>
       <div className="image_container">
         <figure>
-          <img
+          <LazyLoadImage
             alt={movie.title}
             src={`${ENV.Api_image_url}${movie.img}`}
+            placeholderSrc={defaultimg}
             className="movie_item_img"
           />
         </figure>

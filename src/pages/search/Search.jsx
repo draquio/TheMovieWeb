@@ -1,9 +1,10 @@
-import { SearchList } from "../../components/Search";
 import { useParams } from "react-router-dom";
 import { Movie } from "../../services/Movie";
 import { useEffect, useState } from "react";
 import "./Search.scss";
 import { createQueryFromPath } from "../../utils/SearchFunction";
+import { Background, Emptydata } from "../../components";
+import { SearchList } from "../../components/Search";
 export function Search() {
   const params = useParams();
   const query = createQueryFromPath(params.query);
@@ -19,6 +20,11 @@ export function Search() {
   }, [query]);
 
   if (!searchlist) return <div className="loader"></div>;
-  if (searchlist.length === 0) return "No hay resultados";
-  return <SearchList searchlist={searchlist} query={query} />;
+  if (searchlist.length === 0) return <Emptydata data={`resultados de "${query}"`} />;
+  return (
+    <>
+      <SearchList searchlist={searchlist} query={query} />;
+      <Background movie={searchlist[0]} />
+    </>
+  );
 }

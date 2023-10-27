@@ -1,16 +1,16 @@
-
 import "./Inside.scss";
-
+import {Emptydata} from "../Emptydata"
+import {InsideItem} from './InsideItem'
+import { Loader } from "../Loader/Loader";
 export function TeaserInside(props) {
   const { teasers } = props;
+  if (!teasers) return <Loader />
+  if (teasers.length === 0) return <Emptydata data={"Teasers"} />
   return (
     <>
-      {teasers.map((teaser) => (
-        <div key={teaser.id}>
-            <p>{teaser.name}</p>
-            <img alt={teaser.name} className="image_trailer" src={`https://i.ytimg.com/vi/${teaser.key}/hqdefault.jpg`} />
-        </div>
-      ))}
+    {teasers.map(teaser => (
+      <InsideItem key={teaser.key} video={teaser} />
+    ))}
     </>
   );
 }

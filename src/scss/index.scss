@@ -1,14 +1,13 @@
 @import "./elements.scss";
+@import "./responsive.scss";
 
 
 // Responsive
 
-$normal_responsive: 1050px;
-$small_responsive: 800px; // sidebar out
-$very_small_responsive: 600px;
-$mobile_responsive: 320px;
+
 
 
 $background: #110920;
 $text-light: white;
+$main-color: #03c1ef;
 $hover-text-light: #a79dff;

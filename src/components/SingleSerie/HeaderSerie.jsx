@@ -1,36 +1,73 @@
 import React from "react";
+import { ENV } from "../../utils";
+import { BiSolidTimeFive } from "react-icons/bi";
+import { BsCalendar2DateFill } from "react-icons/bs";
+import { AiFillStar } from "react-icons/ai";
 
 export function HeaderSerie(props) {
   const { serie, cast } = props;
+  const date = new Date(serie.first_air_date);
+  const avarage = Math.round(serie.vote_average * 10) / 10;
   if (!cast) return "";
   return (
-    <>
+    <div className="header_post">
+    <img alt={serie.title} src={`${ENV.Api_image_url}${serie.poster_path}`} />
+      <div className="info_post">
       <h1>{serie.name}</h1>
-      <ul>
-        {serie.genres.map((serie) => (
-          <li key={serie.id}>{serie.name}</li>
-        ))}
-      </ul>
-      <p>{serie.first_air_date}</p>
-      <p>{serie.overview}</p>
+      {/* <div className="genre_post">
+          <ul>
+            {serie.genres.map((serie) => (
+              <li key={serie.id}>{serie.name}</li>
+            ))}
+            <li>
+              <BiSolidTimeFive className="icon_post" /> {serie.episode_run_time}m
+            </li>
+            <li>
+              <BsCalendar2DateFill className="icon_post" />
+              {date.getFullYear()}
+            </li>
+            <li>
+              <AiFillStar className="icon_post"/>
+              {avarage}/10
+            </li>
+          </ul>
+        </div> */}
+        <div className="genre_post">
+          <ul className="genre_list">
+            {serie.genres.map((serie) => (
+              <li key={serie.id}>{serie.name}</li>
+            ))}
+          </ul>
+          <div className="details_movie">
+          <p className="details_movie_item">
+              <BiSolidTimeFive className="icon_post" /> {serie.episode_run_time}m
+            </p>
+            <p className="details_movie_item">
+              <BsCalendar2DateFill className="icon_post" />
+              {date.getFullYear()}
+            </p>
+            <p className="details_movie_item">
+              <AiFillStar className="icon_post"/>
+              {avarage}/10
+            </p>
+            </div>
+        </div>
+        <div className="overview_post">{serie.overview}</div>
       <p>Dirección:</p>
-      <ul>
         {cast.directors.map((director) => (
-          <li key={director.id}>
-            {director.name} - {director.jobs[0].episode_count} {" "} 
-            {director.jobs[0].episode_count === 1 ? "capitulo" : "capitulos"}
-          </li>
+          <p key={director.id}>
+            {director.name} ({director.jobs[0].episode_count}{" "} 
+            {director.jobs[0].episode_count === 1 ? "capitulo" : "capitulos"})
+          </p>
         ))}
-      </ul>
       <br />
       <p>Elenco:</p>
-      <ul>
         {cast.actors.map((actor) => (
-          <li key={actor.id}>
+          <p key={actor.id}>
             {actor.name} - {actor.roles[0].character}
-          </li>
+          </p>
         ))}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 }

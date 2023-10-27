@@ -16,7 +16,7 @@ export function WebRouter() {
       <Route path="/movies" element={loadLayaout(Layout, Movies)} />
       <Route path="/series" element={loadLayaout(Layout, Series)} />
       <Route path="/search/:query" element={loadLayaout(Layout, Search)} />
-      <Route path="/:type/:path/:id" element={loadLayaout(LayoutPost, SinglePage)} />
+      <Route path="/:type/:path/:id" element={loadLayaout(Layout, SinglePage)} />
     </Routes>
   );
 }

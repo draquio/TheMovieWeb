@@ -4,6 +4,8 @@ import { Serie as SerieClass } from "../../../services/Serie";
 import { PopularSeriesItem } from "./PopularSeriesItem";
 import { Pagination } from "../../pagination";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Loader } from "../../Loader/Loader";
+import { Background } from "../../Background";
 
 export function PopularSeries() {
   const [series, setSeries] = useState(null);
@@ -15,10 +17,12 @@ export function PopularSeries() {
       try {
         let seriesController = new SerieClass();
         const response = await seriesController.getPopularSeries(page);
-        if (response) {
-          setSeries(response);
-        }
-        window.scrollTo(0, 0);
+        const limitseries = response.slice(0,18);
+        setSeries(limitseries);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       } catch (error) {
         console.error(error);
       }
@@ -28,8 +32,7 @@ export function PopularSeries() {
     setPage(actualpage);
     navigate(`?page=${actualpage}`)
   }
-  if (!series)
-    return <span className="loading loading-spinner loading-lg"></span>;
+  if (!series || series.length === 0) return <Loader />
   return (
     <>
       <div className="title_contaniner">
@@ -43,6 +46,7 @@ export function PopularSeries() {
         ))}
       </section>
        <Pagination PaginationValue={PaginationValueReceived}  actualpage={page} />
+       <Background movie={series[0]} />
     </>
   );
 }

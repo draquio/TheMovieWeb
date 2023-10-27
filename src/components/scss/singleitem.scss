@@ -7,8 +7,11 @@
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  position: relative;
+  z-index: 1
+  ;
   .movie_item {
-    width: 23%;
+    width: 210px;
     .image_container {
       position: relative;
       overflow: hidden;
@@ -90,20 +93,20 @@
   }
 }
 
-@media (max-width: $normal_responsive) {
-  .movies_list_content .movie_item {
-    width: 30%;
-  }
-}
+// @media (max-width: $normal_responsive) {
+//   .movies_list_content .movie_item {
+//     width: 30%;
+//   }
+// }
 
-@media (max-width: $very_small_responsive) {
-  .movies_list_content .movie_item {
-    width: 45%;
-  }
-}
+// @media (max-width: $very_small_responsive) {
+//   .movies_list_content .movie_item {
+//     width: 45%;
+//   }
+// }
 
-@media (max-width: $mobile_responsive) {
-  .movies_list_content .movie_item {
-    width: 95%;
-  }
-}
+// @media (max-width: $mobile_responsive) {
+//   .movies_list_content .movie_item {
+//     width: 95%;
+//   }
+// }

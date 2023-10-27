@@ -4,7 +4,8 @@ export function formatAllSeries(series) {
         title: serie.name || "",
         img: serie.poster_path || "",
         date: serie.first_air_date || "1900-01-1",
-        vote: serie.vote_average || ""
+        vote: serie.vote_average || "",
+        backdrop_path: serie.backdrop_path || "/urj6noDW3OlROu34oy6BCmiQEWQ.jpg"
     }));
     return mapseries;
 }

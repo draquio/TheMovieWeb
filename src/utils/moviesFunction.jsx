@@ -5,6 +5,7 @@ export function formatAllMovie(movies) {
     img: movie.poster_path || "",
     date: movie.release_date || "1900-01-1",
     vote: movie.vote_average || "",
+    backdrop_path: movie.backdrop_path || "https://image.tmdb.org/t/p/w780/mRGmNnh6pBAGGp6fMBMwI8iTBUO.jpg"
   }));
   return mapmovie;
 }
@@ -16,7 +17,8 @@ export function formatSearch(list) {
     img: list.poster_path || "",
     date: list.release_date || list.first_air_date || "1900-01-1",
     vote: list.vote_average || "",
-    type: list.media_type || ""
+    type: list.media_type || "",
+    backdrop_path: list.backdrop_path || "https://image.tmdb.org/t/p/w780/mRGmNnh6pBAGGp6fMBMwI8iTBUO.jpg"
   }));
   let filterlist = maplist?.filter((list) => list.img);
   return filterlist;

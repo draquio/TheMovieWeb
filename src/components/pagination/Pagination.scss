@@ -12,13 +12,13 @@
         width: 40px;
         height: 40px;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 50%;
         justify-content: center;
         cursor: pointer;
         &.active{
-            background-color: #5425ae;
+            background-color: $main_color;
             color:$text-light;
-            box-shadow: 0 0 1rem #5425ae;
+            box-shadow: 0 0 1rem $main_color;
         }
     }
 }

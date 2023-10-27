@@ -96,9 +96,9 @@ export class Movie {
     }
   }
 
-  async getSimilarMovies(id, page= 1) {
+  async getRecommendationMovies(id, limit=4) {
     try {
-      const url = `${ENV.Api_url}/movie/${id}/${ENV.Api_Routes.similar}?language=es-ES&page=${page}`;
+      const url = `${ENV.Api_url}/movie/${id}/${ENV.Api_Routes.recommendation}?language=es-ES`;
       const params = {
         method: "GET",
         headers: {
@@ -110,7 +110,7 @@ export class Movie {
       if (response.status === 200) {
         const result = await response.json();
         const mapmovie = formatAllMovie(result.results);
-        return mapmovie;
+        return mapmovie.slice(0,limit);
       }
       throw response;
     } catch (error) {

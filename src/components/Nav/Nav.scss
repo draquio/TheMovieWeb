@@ -1,24 +1,96 @@
-.nav_bar{
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    padding: 35px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
-    &_list{
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        li{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            a{
-                text-decoration: none;
-            }
-        }
-
+@import "../../scss/index.scss";
+.nav {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 35px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  .logo a {
+      font-size: 20px;
+      margin: auto 0;
+      text-decoration: none;
     }
+  
+  .menu_mobile {
+    display: none;
+  }
+  .nav_bar {
+    &_list {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        a {
+          text-decoration: none;
+          &.active {
+            border-bottom: 2px solid $main-color;
+          }
+        }
+      }
+    }
+  }
+  .menuclose{
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    top: -50vh;
+    right: 0;
+    left: 0;
+    &.active{
+      top: 0;
+    }
+  }
+  .nav_bar_mobile {
+    // display: none;
+    position: fixed;
+    top: 100%;
+    background-color: #110920;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    transition: 0.5s ease all;
+    border-top: 4px solid $main-color;
+    &.active{
+      display: block;
+      top: 40%;
+    }
+    .nav_bar_list_mobile {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      display: flex;
+      li{
+        list-style: none;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        a{
+          text-decoration: none;
+          font-size: 20px;
+          width: 100%;
+          padding: 10px 0;
+          transition: 0.3s ease all;
+          &:hover{
+            background-color: rgb(255 255 255 / 5%);
+          }
+          &.active{
+            border-bottom: 2px solid $main-color;
+            background-color: #ffffff0d;
+          }
+        }
+      }
+    }
+  }
 }

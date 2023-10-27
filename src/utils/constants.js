@@ -11,7 +11,7 @@ export const ENV = {
     top_rated: "top_rated",
     now_playing: "now_playing",
     search: "search",
-    similar: "similar",
     trending: "trending",
+    recommendation: "recommendations"
   },
 };

@@ -1,0 +1,35 @@
+@import "../../scss/index.scss";
+.season_item {
+  width: 95%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15px;
+  background: #160c27;
+  border-radius: 10px;
+  .season_item_img{
+    img {
+      width: 220px;
+      height: 300px;
+      border-radius: 10px 0px 0px 10px;
+    }
+  }
+  .saeson_item_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    .season_item_header {
+      display: flex;
+      gap: 15px;
+      p {
+        display: flex;
+        align-items: center;
+        .icon_post {
+          margin-right: 7px;
+          color: $main_color;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,58 @@
 @import "../../scss/index.scss";
-
-.image_trailer{
-    width: 100%;
+.trailer_content {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 50px 20px;
+  .trailer_item {
+    position: relative;
+    cursor: pointer;
+    max-width: 500px;
+    .title_trailer{
+      text-align: center;
+      margin: auto;
+      width: 85%;
+    }
+    .image_container_trailer {
+      overflow: hidden;
+      border-radius: 10px;
+      .image_trailer {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        border-radius: 10px;
+        transition: 0.3s ease all;
+      }
+    }
+    .icon_play {
+      width: 70px;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      transition: 0.3s ease all;
+      border-radius: 50%;
+      background: #00000080;
+      border: 1px solid white;
+    }
+    .quality_item{
+        position: absolute;
+        bottom: 20px;
+        padding: 4px;
+        right: 20px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.12);
+    }
+    &:hover .icon_play {
+    transform: scale(1.3);
+    }
+    &:hover .image_trailer {
+      filter: blur(5px);
+      transform: scale(1.4);
+    }
+  }
 }

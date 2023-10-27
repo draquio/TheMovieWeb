@@ -1,10 +1,13 @@
 @import "../../scss/index.scss";
+
 .title_contaniner {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   border-bottom: 1px solid #bfbfbf4d;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
   .title_section {
     font-weight: bold;
     padding-bottom: 5px;
@@ -16,12 +19,12 @@
     text-decoration: none;
     transition: 0.3s ease all;
     &:hover {
-      color: $hover-text-light;
+      color: $main-color;
     }
     .icon_title {
       font-size: 20px;
       margin-right: 6px;
-      color: $hover-text-light;
+      color: $main-color;
     }
   }
 }

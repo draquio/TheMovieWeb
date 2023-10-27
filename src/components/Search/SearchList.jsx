@@ -1,15 +1,15 @@
-import React from 'react'
-import { SearchItem } from './SearchItem';
+import React from "react";
+import { SearchItem } from "./SearchItem";
+import { Loader } from "../Loader";
+import { Emptydata } from "../Emptydata";
 
 export function SearchList(props) {
-  const {searchlist, query} = props
-  if (!searchlist) return <span className="loading loading-spinner loading-lg"></span>;
-  if (!searchlist) return <p>No hay resultados</p>;
+  const { searchlist, query } = props;
   return (
     <>
       <div className="title_contaniner">
-      <h2 className="title_section">Búsqueda: {query}</h2>
-    </div>
+        <h2 className="title_section">Búsqueda: {query}</h2>
+      </div>
       <section className="movies_list_content">
         {searchlist.map((movie) => (
           <article key={movie.id} className="movie_item">

@@ -1,0 +1,111 @@
+$normal_responsive: 1050px;
+$small_responsive: 800px; // sidebar out
+$very_small_responsive: 600px;
+$mobile_responsive: 320px;
+
+@media (max-width: 1250px) {
+  .main .main_content {
+    flex-direction: column !important;
+    .container {
+      max-width: none !important;
+    }
+    .sidebar {
+      width: 90% !important;
+      margin: 20px auto;
+    }
+  }
+  // .movies_list_content .movie_item {
+  //   width: 30%;
+  // }
+}
+@media (min-width: 700px) {
+  .nav {
+    .nav_bar_mobile.active {
+      top: 100%;
+    }
+    .menuclose.active {
+        top: -50vh;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  // nav
+  .nav {
+    align-items: center;
+    gap: 40px;
+    z-index: 2;
+    .menu_mobile {
+      display: block;
+    }
+    .nav_bar {
+      display: none;
+    }
+    .nav_bar_mobile {
+      display: block;
+    }
+  }
+
+  //Home
+  .title_contaniner {
+    .title_section {
+      font-size: 18px;
+    }
+    .view_more {
+      font-size: 15px;
+      .icon_title {
+        font-size: 15px;
+      }
+    }
+  }
+
+  // Post
+  .header_post {
+    flex-direction: column;
+    gap: 15px;
+    img {
+      margin: auto;
+    }
+    .info_post {
+      h1 {
+        text-align: center;
+      }
+      .genre_post {
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        .genre_list {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .body_post {
+    .button_content {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .trailer_content .season_item {
+      flex-direction: column;
+      align-items: center;
+      .season_item_img img {
+        border-radius: 0 0 10px 10px;
+      }
+      .saeson_item_content {
+        h3 {
+          text-align: center;
+        }
+        .season_item_header {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .movies_list_content .movie_item {
+    width: 45%;
+  }
+}

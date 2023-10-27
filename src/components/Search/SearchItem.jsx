@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ENV, createPath } from "../../utils";
 import { BsPlayFill } from "react-icons/bs";
+import defaultimg from '../../assets/default.webp';
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 export function SearchItem(props) {
   const { movie } = props;
@@ -12,9 +14,10 @@ export function SearchItem(props) {
     <Link to={url}>
       <div className="image_container">
         <figure>
-          <img
+          <LazyLoadImage
             alt={movie.title}
             src={`${ENV.Api_image_url}${movie.img}`}
+            placeholderSrc={defaultimg}
             className="movie_item_img"
           />
         </figure>

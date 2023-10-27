@@ -5,12 +5,13 @@ import { BodyMovie } from "./BodyMovie";
 import { Cast as CastClass } from "../../services/Cast";
 import "./SingleMovie.scss"
 import { ENV } from "../../utils";
+import { Loader } from "../Loader/Loader";
+import { FooterMovie } from "./FooterMovie";
 
 export function SingleMovie(props) {
   const { id } = props;
   const [movie, setMovie] = useState(null);
   const [cast, setCast] = useState(null);
-  console.log(movie);
   useEffect(() => {
     (async () => {
       try {
@@ -20,18 +21,22 @@ export function SingleMovie(props) {
         const responsecast = await castController.getMovieCast(id);
         setMovie(response);
         setCast(responsecast);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // Scroll suave
+        });
       } catch (error) {
         console.error(error);
       }
     })();
-  }, []);
-  if (!movie)
-    return <span className="loading loading-spinner loading-lg"></span>;
+  }, [id]);
+  if (!movie) return <Loader />  
   return (
     <>
       <div className="bgtop"><img alt={movie.title} src={`${ENV.Api_image_url_backgroud}${movie.backdrop_path}`} /></div>
       <HeaderMovie cast={cast} movie={movie} />
       <BodyMovie movie={movie} />
+      <FooterMovie id={movie.id}/>
     </>
   );
 }

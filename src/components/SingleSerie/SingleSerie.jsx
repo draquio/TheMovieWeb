@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Serie as SerieClass } from "../../services/Serie";
 import { HeaderSerie } from "./HeaderSerie";
 import { BodySerie } from "./BodySerie";
-import { FooterSerie } from "./FooterSerie";
 import { Cast as CastClass } from "../../services/Cast";
+import { ENV } from "../../utils";
 
 export function SingleSerie(props) {
   const { id } = props;
   const [serie, setSerie] = useState(null);
   const [cast, setCast] = useState(null);
+  console.log(serie);
   useEffect(() => {
     (async () => {
       try {
@@ -24,6 +25,10 @@ export function SingleSerie(props) {
         const castController = new CastClass();
         const responsecast = await castController.getSerieCast(id);
         setCast(responsecast);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // Scroll suave
+        });
       } catch (error) {
         console.error(error);
       }
@@ -32,9 +37,9 @@ export function SingleSerie(props) {
   if (!serie && !cast) return <span className="loading loading-spinner loading-lg"></span>;
   return (
     <>
+      <div className="bgtop"><img alt={serie.title} src={`${ENV.Api_image_url_backgroud}${serie.backdrop_path}`} /></div>
       <HeaderSerie cast={cast} serie={serie} />
       <BodySerie serie={serie} />
-      <FooterSerie seasons={serie.seasons} />
     </>
   );
 }
