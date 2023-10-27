@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, Movies, Series, Search, SinglePage } from "../pages";
-import { Layout, LayoutPost } from "../Layout";
+import { Layout } from "../Layout";
 
 export function WebRouter() {
   const loadLayaout = (Layout, Page) => {
