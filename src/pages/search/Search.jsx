@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Movie } from "../../services/Movie";
 import { useEffect, useState } from "react";
 import "./Search.scss";
-import { createQueryFromPath } from "../../utils/SearchFunction";
+import { createQueryFromPath } from "../../utils/searchFunction";
 import { Background, Emptydata } from "../../components";
 import { SearchList } from "../../components/Search";
 export function Search() {
