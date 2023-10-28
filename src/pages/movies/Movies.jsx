@@ -1,6 +1,4 @@
-import {PopularMovies} from "../../components"
+import { PopularMovies } from "../../components";
 export function Movies() {
-  return (
-    <PopularMovies />
-  )
+  return <PopularMovies />;
 }
