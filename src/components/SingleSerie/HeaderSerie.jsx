@@ -14,24 +14,6 @@ export function HeaderSerie(props) {
     <img alt={serie.title} src={`${ENV.Api_image_url}${serie.poster_path}`} />
       <div className="info_post">
       <h1>{serie.name}</h1>
-      {/* <div className="genre_post">
-          <ul>
-            {serie.genres.map((serie) => (
-              <li key={serie.id}>{serie.name}</li>
-            ))}
-            <li>
-              <BiSolidTimeFive className="icon_post" /> {serie.episode_run_time}m
-            </li>
-            <li>
-              <BsCalendar2DateFill className="icon_post" />
-              {date.getFullYear()}
-            </li>
-            <li>
-              <AiFillStar className="icon_post"/>
-              {avarage}/10
-            </li>
-          </ul>
-        </div> */}
         <div className="genre_post">
           <ul className="genre_list">
             {serie.genres.map((serie) => (

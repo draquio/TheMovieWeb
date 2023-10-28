@@ -13,7 +13,6 @@ export function InsideItem(props) {
             <LazyLoadImage
               alt={video.name}
               className="image_trailer"
-              // src={`https://i.ytimg.com/vi/${video.key}/hq720.jpg`}
               src={`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`}
               placeholderSrc={defaultvideo}
             />

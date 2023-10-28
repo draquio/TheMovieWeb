@@ -1,5 +1,5 @@
 import { ENV } from "../../utils";
-import { BiSolidTimeFive, BiSolidCameraMovie } from "react-icons/bi";
+import { BiSolidTimeFive } from "react-icons/bi";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 

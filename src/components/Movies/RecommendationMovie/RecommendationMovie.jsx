@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Movie as MovieClass } from "../../../services/Movie";
 import { RecommendationMovieItem } from "./RecommendationMovieItem";
-import { Loader } from "../../Loader/Loader";
 import "./Recommendation.scss";
-import { Link } from "react-router-dom";
+
 export function RecommendationMovie(props) {
   const { id } = props;
   const [recommendation, setRecommendation] = useState(null);

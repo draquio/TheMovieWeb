@@ -1,26 +1,25 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { Serie as SerieClass } from "../../../services/Serie";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
-import {TrendingSerieItem} from "./TrendingSerieItem"
-
+import { TrendingSerieItem } from "./TrendingSerieItem";
 
 export function TrendingSerie() {
-    const [series,setSeries] = useState(null);
+  const [series, setSeries] = useState(null);
 
-    useEffect(()=>{
-        (async () =>{
-            try {
-                const serieController = new SerieClass();
-                const response = await serieController.getTrendingSeries();
-                const limitseries = response.slice(0,12);
-                setSeries(limitseries);
-            } catch (error) {
-                console.log(error);
-            }
-        })()
-    },[])
-    if (!series)
+  useEffect(() => {
+    (async () => {
+      try {
+        const serieController = new SerieClass();
+        const response = await serieController.getTrendingSeries();
+        const limitseries = response.slice(0, 12);
+        setSeries(limitseries);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+  if (!series)
     return <span className="loading loading-spinner loading-lg"></span>;
   return (
     <>

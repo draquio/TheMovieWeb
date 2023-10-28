@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createSearchPath } from "../../utils/SearchFunction";
+import { createSearchPath } from "../../utils/searchFunction";
 import "./Search.scss"
 import { BiSearchAlt2 } from "react-icons/bi";
 

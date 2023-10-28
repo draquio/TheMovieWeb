@@ -23,7 +23,7 @@ export function SingleMovie(props) {
         setCast(responsecast);
         window.scrollTo({
           top: 0,
-          behavior: "smooth" // Scroll suave
+          behavior: "smooth"
         });
       } catch (error) {
         console.error(error);
