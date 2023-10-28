@@ -3,7 +3,6 @@ import { ENV } from "../../utils";
 
 export function Background(props) {
     const {movie} = props;
-    console.log(movie);
   if (!movie) return ""
   return (
     <div className="bgtop" style={{ opacity: 0.2 }}>

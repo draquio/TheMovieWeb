@@ -23,7 +23,7 @@ export function Search() {
   if (searchlist.length === 0) return <Emptydata data={`resultados de "${query}"`} />;
   return (
     <>
-      <SearchList searchlist={searchlist} query={query} />;
+      <SearchList searchlist={searchlist} query={query} />
       <Background movie={searchlist[0]} />
     </>
   );

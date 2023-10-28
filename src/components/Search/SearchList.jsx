@@ -1,7 +1,5 @@
 import React from "react";
 import { SearchItem } from "./SearchItem";
-import { Loader } from "../Loader";
-import { Emptydata } from "../Emptydata";
 
 export function SearchList(props) {
   const { searchlist, query } = props;

@@ -9,7 +9,6 @@ export function SingleSerie(props) {
   const { id } = props;
   const [serie, setSerie] = useState(null);
   const [cast, setCast] = useState(null);
-  console.log(serie);
   useEffect(() => {
     (async () => {
       try {
