@@ -19,6 +19,7 @@ export function TrendingSerieItem(props) {
             src={`${ENV.Api_image_url}${serie.img}`}
             placeholderSrc={defaultimg}
             className="movie_item_img"
+            effect="blur"
           />
         </figure>
         <BsPlayFill className="icon_play" />

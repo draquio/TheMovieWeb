@@ -14,6 +14,7 @@ export function PopularMovies() {
   useEffect(() => {
     (async () => {
       try {
+        if (page < 1) window.location.href = "/movies";
         let movieController = new MovieClass();
         const response = await movieController.getPopularMovies(page);
         if (response) {

@@ -18,7 +18,7 @@ export function BodyMovie(props) {
         setVideos(response);
       } catch (error) {}
     })();
-  }, []);
+  }, [movie.id]);
   if (!videos)
     return <span className="loading loading-spinner loading-lg"></span>;
   return (

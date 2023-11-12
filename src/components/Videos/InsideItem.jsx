@@ -21,6 +21,7 @@ export function InsideItem(props) {
               className="image_trailer"
               src={`https://img.youtube.com/vi/${video.key}/hqdefault.jpg`}
               placeholderSrc={defaultvideo}
+              effect="blur"
             />
           </figure>
           <BsPlayFill className="icon_play" />

@@ -4,6 +4,7 @@ import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import { ENV } from "../../utils";
 import { Loader } from "../Loader/Loader";
 import { Emptydata } from "../Emptydata";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export function SeasonItem(props) {
   const { season } = props;
@@ -13,9 +14,10 @@ export function SeasonItem(props) {
   return (
     <div className="season_item">
       <div className="season_item_img">
-        <img
+        <LazyLoadImage
           alt={season.name}
           src={`${ENV.Api_image_url}${season.poster_path}`}
+          effect="blur"
         />
       </div>
       <div className="saeson_item_content">
