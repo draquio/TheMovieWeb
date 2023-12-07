@@ -1,4 +1,4 @@
-# TheMovies
+# TheMovie
 Sitio web de películas y series nuevas y en tendencias realizado con React y Sass mediante el uso de una API.
 
 # Instalación
