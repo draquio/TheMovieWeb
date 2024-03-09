@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ENV, createPath } from "../../utils";
 import { BsPlayFill } from "react-icons/bs";
-import defaultimg from '../../assets/default.webp';
 import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export function SearchItem(props) {
   const { movie } = props;
@@ -17,7 +17,9 @@ export function SearchItem(props) {
           <LazyLoadImage
             alt={movie.title}
             src={`${ENV.Api_image_url}${movie.img}`}
-            placeholderSrc={defaultimg}
+            width={220}
+            height={330}
+            effect="blur"
             className="movie_item_img"
           />
         </figure>

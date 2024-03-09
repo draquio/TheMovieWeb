@@ -25,7 +25,7 @@ export function Search(props) {
   return (
     <form className="search_form">
       <input
-        placeholder="Buscar película"
+        placeholder="Buscar película o serie"
         onKeyDown={handleKeyPress}
         onChange={handleChange}
         value={query}

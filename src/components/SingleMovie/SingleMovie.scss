@@ -15,6 +15,7 @@
     height: 55vh;
     object-fit: cover;
     object-position: 50% 20%;
+    animation: fade-background 1s;
   }
 
   &::before {
@@ -65,7 +66,7 @@
   .info_post {
     display: flex;
     flex-direction: column;
-
+    animation: fade-up 0.5s;
     .genre_post {
       margin: -5px 0 15px 0;
       display: flex;
@@ -108,6 +109,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px 0px;
+    animation: scale 0.5s;
     button{
       padding: 10px 25px;
       border: 1px solid $main-color;

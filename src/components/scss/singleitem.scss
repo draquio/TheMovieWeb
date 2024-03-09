@@ -8,9 +8,9 @@
   gap: 15px;
   justify-content: center;
   position: relative;
-  z-index: 1
-  ;
+  z-index: 1;
   .movie_item {
+    animation: fade-up 0.5s;
     width: 210px;
     .image_container {
       position: relative;
@@ -92,21 +92,3 @@
     }
   }
 }
-
-// @media (max-width: $normal_responsive) {
-//   .movies_list_content .movie_item {
-//     width: 30%;
-//   }
-// }
-
-// @media (max-width: $very_small_responsive) {
-//   .movies_list_content .movie_item {
-//     width: 45%;
-//   }
-// }
-
-// @media (max-width: $mobile_responsive) {
-//   .movies_list_content .movie_item {
-//     width: 95%;
-//   }
-// }

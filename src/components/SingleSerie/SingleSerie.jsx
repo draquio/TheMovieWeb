@@ -5,6 +5,7 @@ import { BodySerie } from "./BodySerie";
 import { Cast as CastClass } from "../../services/Cast";
 import { ENV } from "../../utils";
 
+
 export function SingleSerie(props) {
   const { id } = props;
   const [serie, setSerie] = useState(null);

@@ -2,6 +2,8 @@ import { ENV } from "../../utils";
 import { BiSolidTimeFive } from "react-icons/bi";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export function HeaderMovie(props) {
   const { movie, cast } = props;
@@ -11,7 +13,7 @@ export function HeaderMovie(props) {
   const avarage = Math.round(movie.vote_average * 10) / 10;
   return (
     <div className="header_post">
-      <img alt={movie.title} src={`${ENV.Api_image_url}${movie.poster_path}`} />
+      <LazyLoadImage alt={movie.title} src={`${ENV.Api_image_url}${movie.poster_path}`} effect="blur" width={220} height={330} />
       <div className="info_post">
         <h1>{movie.title}</h1>
         <div className="genre_post">

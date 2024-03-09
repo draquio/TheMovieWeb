@@ -2,7 +2,7 @@ import { ENV, createPath } from "../../../utils";
 import { Link } from "react-router-dom";
 import { BsPlayFill } from "react-icons/bs";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import defaultimg from "../../../assets/default.webp";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export function TrendingMovieItem(props) {
     const { movie } = props;
@@ -12,13 +12,14 @@ export function TrendingMovieItem(props) {
     return (
       <Link to={url}>
         <div className="image_container">
-          <figure>
+          <figure >
             <LazyLoadImage
               alt={movie.title}
               src={`${ENV.Api_image_url}${movie.img}`}
-              placeholderSrc={defaultimg}
               className="movie_item_img"
               effect="blur"
+              height={330}
+              width={220}
             />
           </figure>
           <BsPlayFill className="icon_play" />

@@ -6,6 +6,8 @@
   gap: 15px;
   background: #160c27;
   border-radius: 10px;
+  height: 300px;
+  animation: fade-up 0.5s;
   .season_item_img{
     img {
       width: 220px;
@@ -30,6 +32,15 @@
           font-size: 18px;
         }
       }
+    }
+    .description{
+      padding-right: 20px;
+
+      text-wrap: balance;
+      overflow: auto;
+      scrollbar-color: rgb(181 181 181 / 18%) rgb(17 9 32);
+      scrollbar-width: thin;
+      height: 200px;
     }
   }
 }

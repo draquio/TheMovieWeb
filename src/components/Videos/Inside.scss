@@ -5,22 +5,25 @@
   flex-wrap: wrap;
   margin-top: 30px;
   gap: 50px 20px;
+  max-width: 900px;
+  margin: 50px auto;
   .trailer_item {
     position: relative;
     cursor: pointer;
-    max-width: 500px;
+    animation: fade-up 0.5s;
     .title_trailer{
       text-align: center;
       margin: auto;
       width: 85%;
+      
     }
     .image_container_trailer {
       overflow: hidden;
       border-radius: 10px;
+      height: 225px;
       .image_trailer {
         width: 100%;
         height: auto;
-        max-width: 500px;
         border-radius: 10px;
         transition: 0.3s ease all;
       }

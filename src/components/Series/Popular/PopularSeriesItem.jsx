@@ -3,7 +3,7 @@ import { ENV, createPath } from "../../../utils"
 import "./PopularSeries.scss"
 import { BsPlayFill } from "react-icons/bs"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import defaultimg from "../../../assets/default.webp";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export function PopularSeriesItem(props) {
   const {serie} = props
@@ -17,9 +17,10 @@ export function PopularSeriesItem(props) {
           <LazyLoadImage
             alt={serie.title}
             src={`${ENV.Api_image_url}${serie.img}`}
-            placeholderSrc={defaultimg}
             className="movie_item_img"
             effect="blur"
+            width={220}
+            height={330}
           />
         </figure>
         <BsPlayFill className="icon_play" />

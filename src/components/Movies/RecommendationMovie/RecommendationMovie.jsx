@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Movie as MovieClass } from "../../../services/Movie";
 import { RecommendationMovieItem } from "./RecommendationMovieItem";
 import "./Recommendation.scss";
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 export function RecommendationMovie(props) {
   const { id } = props;
@@ -19,6 +20,7 @@ export function RecommendationMovie(props) {
   }, [id]);
   if (!recommendation || recommendation.length === 0) return ""
   return (
+    <LazyLoadComponent>
     <div className="recommendation_section">
       <h2>Te puede interesar:</h2>
       <section className="recommendation_list_content">
@@ -32,5 +34,6 @@ export function RecommendationMovie(props) {
         ))}
       </section>
     </div>
+    </LazyLoadComponent>
   );
 }

@@ -1,8 +1,8 @@
 import { ENV, createPath } from "../../../utils";
 import { BsPlayFill } from "react-icons/bs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import defaultimg from "../../../assets/default.webp";
 import { Link } from "react-router-dom";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export function RecommendationMovieItem(props) {
   const { recommendation } = props;
@@ -16,9 +16,10 @@ export function RecommendationMovieItem(props) {
           <LazyLoadImage
             alt={recommendation.title}
             src={`${ENV.Api_image_url}${recommendation.img}`}
-            placeholderSrc={defaultimg}
             className="movie_item_img"
             effect="blur"
+            height={280}
+            width={180}
           />
         </figure>
         <BsPlayFill className="icon_play" />

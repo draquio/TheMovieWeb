@@ -11,6 +11,7 @@
     justify-content: center;
     .recommendation_item{
         width: 170px;
+        animation: fade-up 0.5s;
         .image_container {
             position: relative;
             overflow: hidden;

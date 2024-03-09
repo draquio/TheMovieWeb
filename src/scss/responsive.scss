@@ -14,9 +14,7 @@ $mobile_responsive: 320px;
       margin: 20px auto;
     }
   }
-  // .movies_list_content .movie_item {
-  //   width: 30%;
-  // }
+
 }
 @media (min-width: 700px) {
   .nav {
@@ -24,7 +22,7 @@ $mobile_responsive: 320px;
       top: 100%;
     }
     .menuclose.active {
-        top: -50vh;
+      top: -50vh;
     }
   }
 }
@@ -43,6 +41,9 @@ $mobile_responsive: 320px;
     }
     .nav_bar_mobile {
       display: block;
+      .nav_bar_list_mobile li .search_form .search_input {
+        font-size: 22px;
+      }
     }
   }
 
@@ -63,7 +64,8 @@ $mobile_responsive: 320px;
   .header_post {
     flex-direction: column;
     gap: 15px;
-    img {
+    // img {
+      span {
       margin: auto;
     }
     .info_post {
@@ -88,6 +90,8 @@ $mobile_responsive: 320px;
     .trailer_content .season_item {
       flex-direction: column;
       align-items: center;
+      min-height: 600px;
+      height: 100%;
       .season_item_img img {
         border-radius: 0 0 10px 10px;
       }
@@ -99,6 +103,10 @@ $mobile_responsive: 320px;
           justify-content: center;
           flex-wrap: wrap;
         }
+        .description{
+          padding: 0 20px;
+          margin-bottom: 15px;
+        }
       }
     }
   }
@@ -107,5 +115,12 @@ $mobile_responsive: 320px;
 @media (max-width: 500px) {
   .movies_list_content .movie_item {
     width: 45%;
+  }
+}
+@media (max-width: 450px) {
+  .movies_list_content .movie_item .image_container figure .movie_item_img {
+    position: absolute;
+    right: 15%;
+    
   }
 }
