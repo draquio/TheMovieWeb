@@ -42,7 +42,7 @@ $mobile_responsive: 320px;
     .nav_bar_mobile {
       display: block;
       .nav_bar_list_mobile li .search_form .search_input {
-        font-size: 22px;
+        font-size: 18px;
       }
     }
   }
@@ -121,6 +121,12 @@ $mobile_responsive: 320px;
   .movies_list_content .movie_item .image_container figure .movie_item_img {
     position: absolute;
     right: 15%;
-    
+  }
+  .recommendation_section .recommendation_list_content .recommendation_item{
+    width: 145px;
+    .image_container figure .movie_item_img{
+      position: relative;
+      right: 10%;
+    }
   }
 }
