@@ -33,7 +33,7 @@ export function SingleMovie(props) {
   if (!movie) return <Loader />  
   return (
     <>
-      <div className="bgtop"><img alt={movie.title} src={`${ENV.Api_image_url_backgroud}${movie.backdrop_path}`} /></div>
+      <div className="bgtop"><img alt={movie.title} src={`${ENV.Api_image_url_backgroud}${movie.backdrop_path}`} loading="eager" /></div>
       <HeaderMovie cast={cast} movie={movie} />
       <BodyMovie movie={movie} />
       <FooterMovie id={movie.id}/>
