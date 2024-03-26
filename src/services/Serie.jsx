@@ -68,9 +68,9 @@ export class Serie {
     }
   }
 
-  async getTrendingSeries() {
+  async getTrendingSeries(page = 1) {
     try {
-      const url = `${ENV.Api_url}/${ENV.Api_Routes.trending}/tv/week?language=es-ES`;
+      const url = `${ENV.Api_url}/${ENV.Api_Routes.trending}/tv/week?language=es-ES&page=${page}`;
       const params = {
         method: "GET",
         headers: {

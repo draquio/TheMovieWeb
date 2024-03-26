@@ -17,7 +17,7 @@ export function PopularSeries() {
       try {
         if (page < 1) window.location.href = "/series";
         let seriesController = new SerieClass();
-        const response = await seriesController.getPopularSeries(page);
+        const response = await seriesController.getTrendingSeries(page);
         const limitseries = response.slice(0, 18);
         setSeries(limitseries);
         window.scrollTo({

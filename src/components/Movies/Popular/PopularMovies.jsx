@@ -41,6 +41,7 @@ export function PopularMovies() {
         <h2 className="title_section">Películas populares</h2>
       </div>
       <section className="movies_list_content">
+      
         {movies.map((movie) => (
           <article key={movie.id} className="movie_item">
             <PopularMoviesItem movie={movie} />
