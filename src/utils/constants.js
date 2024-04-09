@@ -1,5 +1,5 @@
 export const ENV = {
- Api_url: "https://api.themoviedb.org/3",
+  Api_url: "https://api.themoviedb.org/3",
   Token: import.meta.env.VITE_API_TOKEN,
   Api_image_url_original: "https://image.tmdb.org/t/p/original",
   Api_image_url_backgroud: "https://image.tmdb.org/t/p/w780",
@@ -10,6 +10,6 @@ export const ENV = {
     now_playing: "now_playing",
     search: "search",
     trending: "trending",
-    recommendation: "recommendations"
+    recommendation: "recommendations",
   },
 };

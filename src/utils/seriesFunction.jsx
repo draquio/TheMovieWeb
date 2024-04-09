@@ -1,4 +1,6 @@
 export function formatAllSeries(series) {
+    if(!series || !Array.isArray(series)) return []
+
     let mapseries = series?.map(serie => ({
         id: serie.id || "",
         title: serie.name || "",
@@ -10,7 +12,7 @@ export function formatAllSeries(series) {
     return mapseries;
 }
 
-export function cleanEmptySeries(series) {
-    let cleanseries = series?.filter(serie => serie.overview !== "")
-    return cleanseries;
-}
+// export function cleanEmptySeries(series) {
+//     let cleanseries = series?.filter(serie => serie.overview !== "")
+//     return cleanseries;
+// }

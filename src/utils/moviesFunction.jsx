@@ -1,4 +1,5 @@
 export function formatAllMovie(movies) {
+  if(!movies || !Array.isArray(movies)) return []
   let mapmovie = movies?.map((movie) => ({
     id: movie.id || "",
     title: movie.title || "",
@@ -11,7 +12,8 @@ export function formatAllMovie(movies) {
 }
 
 export function formatSearch(list) {
-  let maplist = list?.map((list) => ({
+  if(!list) return []
+  let maplist = list.map((list) => ({
     id: list.id || "",
     title: list.title || list.name || "",
     img: list.poster_path || "",
@@ -26,6 +28,7 @@ export function formatSearch(list) {
 
 
 export function createPath(title) {
+  if(!title) return ""
   let result = title
     .replaceAll(" ", "-")
     .replaceAll(":", "")
