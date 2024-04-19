@@ -13,7 +13,7 @@ export function HeaderSerie(props) {
   if (!cast) return "";
   return (
     <div className="header_post">
-    <LazyLoadImage alt={serie.title}  src={`${ENV.Api_image_url}${serie.poster_path}`} effect="blur" width={220} height={330} />
+    <LazyLoadImage alt={serie.name} src={`${ENV.Api_image_url}${serie.poster_path}`} effect="blur" width={220} height={330} />
       <div className="info_post">
       <h1>{serie.name}</h1>
         <div className="genre_post">

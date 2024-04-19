@@ -1,3 +1,4 @@
+import { describe, expect, test } from "vitest";
 import { createQueryFromPath, createSearchPath } from "../utils/searchFunction";
 
 describe("Testing createSearchPath function", () => {

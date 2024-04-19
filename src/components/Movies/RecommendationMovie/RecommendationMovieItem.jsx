@@ -20,6 +20,7 @@ export function RecommendationMovieItem(props) {
             effect="blur"
             height={280}
             width={180}
+            aria-label="recommendation_movie_item"
           />
         </figure>
         <BsPlayFill className="icon_play" />

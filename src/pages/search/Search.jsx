@@ -9,6 +9,8 @@ export function Search() {
   const params = useParams();
   const query = createQueryFromPath(params.query);
   const [searchlist, setSearchlist] = useState(null);
+  console.log(searchlist);
+  console.log(query);
   useEffect(() => {
     (async () => {
       const movieController = new Movie();

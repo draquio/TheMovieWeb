@@ -20,6 +20,7 @@ export function SearchItem(props) {
             width={220}
             height={330}
             effect="blur"
+            aria-label="result_item"
             className="movie_item_img"
           />
         </figure>

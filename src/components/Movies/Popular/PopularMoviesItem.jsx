@@ -1,9 +1,8 @@
 import { ENV, createPath } from "../../../utils";
 import { Link } from "react-router-dom";
 import { BsPlayFill } from "react-icons/bs";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
 export function PopularMoviesItem(props) {
   const { movie } = props;
   const date = new Date(movie.date);
@@ -17,6 +16,7 @@ export function PopularMoviesItem(props) {
             alt={movie.title}
             src={`${ENV.Api_image_url}${movie.img}`}
             className="movie_item_img"
+            aria-label="movie_item"
             effect="blur"
             height={330}
             width={220}

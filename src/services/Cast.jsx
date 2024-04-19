@@ -16,9 +16,7 @@ export class Cast {
       if (response.status === 200) {
         const result = await response.json();
         const directors = getMovieDirectors(result.crew);
-        console.log(directors);
         const actors = getActors(result.cast, 10);
-        console.log(actors);
         return { directors, actors };
       }
       throw response;

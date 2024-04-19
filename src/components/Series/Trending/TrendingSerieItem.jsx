@@ -21,6 +21,7 @@ export function TrendingSerieItem(props) {
             effect="blur"
             width={220}
             height={330}
+            aria-label='trending_serie_item'
           />
         </figure>
         <BsPlayFill className="icon_play" />

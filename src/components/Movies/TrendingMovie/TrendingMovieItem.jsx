@@ -20,6 +20,7 @@ export function TrendingMovieItem(props) {
               effect="blur"
               height={330}
               width={220}
+              aria-label="trending_movie_item"
             />
           </figure>
           <BsPlayFill className="icon_play" />

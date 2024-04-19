@@ -1,2 +1,2 @@
-export {PopularSeries} from "./Popular"
-export {TrendingSerie} from "./Trending"
+export { PopularSeries } from "./Popular";
+export { TrendingSerie } from "./Trending";

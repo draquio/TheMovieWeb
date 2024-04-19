@@ -20,7 +20,7 @@ export function RecommendationMovie(props) {
   }, [id]);
   if (!recommendation || recommendation.length === 0) return ""
   return (
-    <LazyLoadComponent>
+    // <LazyLoadComponent>
     <div className="recommendation_section">
       <h2>Te puede interesar:</h2>
       <section className="recommendation_list_content">
@@ -34,6 +34,6 @@ export function RecommendationMovie(props) {
         ))}
       </section>
     </div>
-    </LazyLoadComponent>
+    // </LazyLoadComponent>
   );
 }

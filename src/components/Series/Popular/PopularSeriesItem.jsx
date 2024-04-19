@@ -21,6 +21,7 @@ export function PopularSeriesItem(props) {
             effect="blur"
             width={220}
             height={330}
+            aria-label="serie_item"
           />
         </figure>
         <BsPlayFill className="icon_play" />
