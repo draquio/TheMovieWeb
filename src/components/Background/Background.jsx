@@ -6,7 +6,7 @@ export function Background(props) {
   if (!movie) return ""
   return (
     <div className="bgtop" style={{ opacity: 0.7 }}>
-      <img src={`${ENV.Api_image_url_backgroud}${movie.backdrop_path}`} alt="movie_background" loading="eager" />
+      <img src={`${ENV.Api_image_url_original}${movie.backdrop_path}`} alt="movie_background" loading="eager" />
     </div>
   );
 }

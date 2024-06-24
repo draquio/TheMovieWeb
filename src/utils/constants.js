@@ -3,7 +3,7 @@ export const ENV = {
   Token: import.meta.env.VITE_API_TOKEN,
   Api_image_url_original: "https://image.tmdb.org/t/p/original",
   Api_image_url_backgroud: "https://image.tmdb.org/t/p/w780",
-  Api_image_url: "https://www.themoviedb.org/t/p/w220_and_h330_face",
+  Api_image_url: "https://image.tmdb.org/t/p/w342",
   Api_Routes: {
     popular: "popular",
     top_rated: "top_rated",

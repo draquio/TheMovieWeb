@@ -37,7 +37,7 @@ export function SingleSerie(props) {
   if (!serie && !cast) return <span className="loading loading-spinner loading-lg"></span>;
   return (
     <>
-      <div className="bgtop"><img alt={`${serie.title} background`} src={`${ENV.Api_image_url_backgroud}${serie.backdrop_path}`} /></div>
+      <div className="bgtop"><img alt={`${serie.title} background`} src={`${ENV.Api_image_url_original}${serie.backdrop_path}`} /></div>
       <HeaderSerie cast={cast} serie={serie} />
       <BodySerie serie={serie} />
     </>
