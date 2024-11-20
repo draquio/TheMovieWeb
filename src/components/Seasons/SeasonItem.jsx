@@ -5,7 +5,7 @@ import { ENV } from "../../utils";
 import { Loader } from "../Loader/Loader";
 import { Emptydata } from "../Emptydata";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
+import defaultImage from "../../assets/default.webp"
 export function SeasonItem(props) {
   const { season } = props;
   if (!season) return <Loader />;
@@ -18,6 +18,10 @@ export function SeasonItem(props) {
             alt={season.name}
             src={`${ENV.Api_image_url}${season.poster_path}`}
             effect="blur"
+            onError={(e) => {
+              e.target.onerror = null; 
+              e.target.src = defaultImage;
+            }}
           />
         </div>
         <div className="saeson_item_content">

@@ -12,7 +12,7 @@ export function TrendingSerie() {
       try {
         const serieController = new SerieClass();
         const response = await serieController.getTrendingSeries();
-        const limitseries = response.slice(0, 12);
+        const limitseries = response.slice(0, 10);
         setSeries(limitseries);
       } catch (error) {
         console.log(error);

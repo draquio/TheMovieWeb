@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { Movie } from "../../services/Movie";
 import { useEffect, useState } from "react";
 import "./Search.scss";
@@ -9,10 +9,9 @@ export function Search() {
   const params = useParams();
   const query = createQueryFromPath(params.query);
   const [searchlist, setSearchlist] = useState(null);
-  console.log(searchlist);
-  console.log(query);
   useEffect(() => {
     (async () => {
+
       const movieController = new Movie();
       const response = await movieController.Search(query);
       if (response) {
@@ -22,11 +21,7 @@ export function Search() {
   }, [query]);
 
   if (!searchlist) return <div className="loader"></div>;
-  if (searchlist.length === 0) return <Emptydata data={`resultados de "${query}"`} />;
-  return (
-    <>
-      <SearchList searchlist={searchlist} query={query} />
-      <Background movie={searchlist[0]} />
-    </>
-  );
+  if (searchlist.length === 0)
+    return <Emptydata data={`resultados de "${query}"`} />;
+  return <SearchList searchlist={searchlist} query={query} />;
 }

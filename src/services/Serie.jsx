@@ -89,4 +89,26 @@ export class Serie {
       console.error(error);
     }
   }
+
+  async getPopularSeriesByGenre(page = 1, genreId = 10759) {
+    try {
+      const url = `${ENV.Api_url}/${ENV.Api_Routes.discover}/tv?language=es-ES&page=${page}&sort_by=popularity.desc&with_genres=${genreId}`;
+      const params = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${ENV.Token}`,
+        },
+      };
+      const response = await fetch(url, params);
+      if (response.status === 200) {
+        const result = await response.json();
+        const mapmovie = formatAllSeries(result.results);
+        return mapmovie;
+      }
+      throw response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }

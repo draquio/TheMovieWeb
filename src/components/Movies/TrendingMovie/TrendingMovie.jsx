@@ -14,7 +14,7 @@ export function TrendingMovie() {
           let movieController = new MovieClass();
           const response = await movieController.getTrendingMovies();
           if (response) {
-            const limitmovies = response.slice(0,12);
+            const limitmovies = response.slice(0,10);
             setMovies(limitmovies);
             window.scrollTo({
               top: 0,

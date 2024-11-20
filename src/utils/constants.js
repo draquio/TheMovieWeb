@@ -11,5 +11,6 @@ export const ENV = {
     search: "search",
     trending: "trending",
     recommendation: "recommendations",
+    discover: "discover"
   },
 };

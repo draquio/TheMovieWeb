@@ -4,12 +4,14 @@ import "./PopularSeries.scss"
 import { BsPlayFill } from "react-icons/bs"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import defaultImage from "../../../assets/default.webp"
 export function PopularSeriesItem(props) {
-  const {serie} = props
+  const {serie} = props;
+
   const date = new Date(serie.date);
   const path = createPath(serie.title)
   const url = `/serie/${path}/${serie.id}`
+  
   return (
     <Link to={url}>
       <div className="image_container">
@@ -19,9 +21,11 @@ export function PopularSeriesItem(props) {
             src={`${ENV.Api_image_url}${serie.img}`}
             className="movie_item_img"
             effect="blur"
-            width={220}
-            height={330}
             aria-label="serie_item"
+            onError={(e) => {
+              e.target.onerror = null; 
+              e.target.src = defaultImage;
+            }}
           />
         </figure>
         <BsPlayFill className="icon_play" />

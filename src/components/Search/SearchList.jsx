@@ -1,3 +1,5 @@
+import { Background } from "../Background";
+import { Pagination } from "../pagination";
 import { SearchItem } from "./SearchItem";
 
 export function SearchList(props) {
@@ -14,6 +16,7 @@ export function SearchList(props) {
           </article>
         ))}
       </section>
+      <Background movie={searchlist[0]} />
     </>
   );
 }

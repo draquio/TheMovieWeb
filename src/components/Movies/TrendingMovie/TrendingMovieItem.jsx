@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsPlayFill } from "react-icons/bs";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import defaultImage from "../../../assets/default.webp"
 export function TrendingMovieItem(props) {
     const { movie } = props;
     const date = new Date(movie.date);
@@ -18,9 +18,11 @@ export function TrendingMovieItem(props) {
               src={`${ENV.Api_image_url}${movie.img}`}
               className="movie_item_img"
               effect="blur"
-              height={330}
-              width={220}
               aria-label="trending_movie_item"
+              onError={(e) => {
+                e.target.onerror = null; 
+                e.target.src = defaultImage;
+              }}
             />
           </figure>
           <BsPlayFill className="icon_play" />

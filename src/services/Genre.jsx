@@ -1,8 +1,8 @@
-import { ENV } from "../utils";
-export class Genres {
-  async getGenres() {
+import { ENV, formatAllGenres } from "../utils";
+export class Genre {
+  async getGenres(type = "movie") {
     try {
-      const url = `${ENV.Api_url}/genre/movie/list`;
+      const url = `${ENV.Api_url}/genre/${type}/list?language=es`;
       const params = {
         method: "GET",
         headers: {
@@ -13,7 +13,8 @@ export class Genres {
       const response = await fetch(url, params);
       if (response.status === 200) {
         const result = await response.json();
-        return result;
+        const mapGenre = formatAllGenres(result.genres);
+        return mapGenre;
       }
     } catch (error) {
       throw result;

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Pagination.scss";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
-export function Pagination(props) {
-  const { actualpage } = props;
-  const [page, setPage] = useState(parseInt(actualpage) || 1);
+export function Pagination() {
+  const [searchParams] = useSearchParams();
+  const page = Number(searchParams.get("page")) || 1;
+  const navigate = useNavigate();
   const handleChangePagination = (value) => {
-    setPage(value);
-    props.PaginationValue(value);
+    navigate(`?page=${value}`);
   };
   return (
     <div className="pagination_container">
@@ -23,7 +24,6 @@ export function Pagination(props) {
       )}
       <p className="active">{page}</p>
       <p onClick={() => handleChangePagination(page + 1)}>{page + 1}</p>
-      <p onClick={() => handleChangePagination(page + 2)}>{(page + 2)}</p>
       <p onClick={() => handleChangePagination(page + 1)}>
         <AiOutlineArrowRight />
       </p>

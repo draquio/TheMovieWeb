@@ -3,7 +3,7 @@ import { BsPlayFill } from "react-icons/bs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import defaultImage from "../../../assets/default.webp"
 export function RecommendationMovieItem(props) {
   const { recommendation } = props;
   const date = new Date(recommendation.date);
@@ -18,8 +18,10 @@ export function RecommendationMovieItem(props) {
             src={`${ENV.Api_image_url}${recommendation.img}`}
             className="movie_item_img"
             effect="blur"
-            height={280}
-            width={180}
+            onError={(e) => {
+              e.target.onerror = null; 
+              e.target.src = defaultImage;
+            }}
             aria-label="recommendation_movie_item"
           />
         </figure>

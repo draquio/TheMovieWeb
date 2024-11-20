@@ -4,6 +4,7 @@ import { HeaderSerie } from "./HeaderSerie";
 import { BodySerie } from "./BodySerie";
 import { Cast as CastClass } from "../../services/Cast";
 import { ENV } from "../../utils";
+import { Loader } from "../Loader/Loader";
 
 
 export function SingleSerie(props) {
@@ -34,7 +35,7 @@ export function SingleSerie(props) {
       }
     })();
   }, []);
-  if (!serie && !cast) return <span className="loading loading-spinner loading-lg"></span>;
+  if (!serie && !cast) return <Loader />;
   return (
     <>
       <div className="bgtop"><img alt={`${serie.title} background`} src={`${ENV.Api_image_url_original}${serie.backdrop_path}`} /></div>

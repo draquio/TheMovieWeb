@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Nav.scss";
-import "../scss/menuToggle.scss"
+import "../scss/menuToggle.scss";
 import { Search } from "../Search";
 import { useEffect, useState } from "react";
+import { Genre } from "../Genre";
 export function Nav() {
   const location = useLocation();
   const [isActive, setIsActive] = useState(false);
@@ -29,7 +30,12 @@ export function Nav() {
         <Link to={"/"}>TheMovie</Link>
       </div>
       <div id="menuToggle" className="menu_mobile">
-        <input id="checkbox" type="checkbox" checked={isActive} onChange={NavActive}/>
+        <input
+          id="checkbox"
+          type="checkbox"
+          checked={isActive}
+          onChange={NavActive}
+        />
         <label className="toggle" htmlFor="checkbox">
           <div className="bar bar--top"></div>
           <div className="bar bar--middle"></div>
