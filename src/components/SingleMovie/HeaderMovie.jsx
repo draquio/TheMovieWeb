@@ -4,7 +4,7 @@ import { BsCalendar2DateFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import defaultImage from "../../assets/default.webp"
 export function HeaderMovie(props) {
   const { movie, cast } = props;
   const hours = Math.floor(movie.runtime / 60);
@@ -13,7 +13,17 @@ export function HeaderMovie(props) {
   const avarage = Math.round(movie.vote_average * 10) / 10;
   return (
     <div className="header_post">
-      <LazyLoadImage alt={movie.title} src={`${ENV.Api_image_url}${movie.poster_path}`} effect="blur" width={220} height={330} />
+      <LazyLoadImage
+        alt={movie.title}
+        src={`${ENV.Api_image_url}${movie.poster_path}`}
+        effect="blur"
+        width={220}
+        height={330}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = defaultImage;
+        }}
+      />
       <div className="info_post">
         <h1>{movie.title}</h1>
         <div className="genre_post">
@@ -23,7 +33,7 @@ export function HeaderMovie(props) {
             ))}
           </ul>
           <div className="details_movie">
-          <p className="details_movie_item">
+            <p className="details_movie_item">
               <BiSolidTimeFive className="icon_post" /> {hours}h {minutes}m
             </p>
             <p className="details_movie_item">
@@ -31,10 +41,10 @@ export function HeaderMovie(props) {
               {date.getFullYear()}
             </p>
             <p className="details_movie_item">
-              <AiFillStar className="icon_post"/>
+              <AiFillStar className="icon_post" />
               {avarage}/10
             </p>
-            </div>
+          </div>
         </div>
         <div className="overview_post">{movie.overview}</div>
         <div className="director_post">
