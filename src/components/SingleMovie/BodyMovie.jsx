@@ -4,12 +4,12 @@ import { TrailerInside, TeaserInside } from "../Videos";
 import { BsPlayFill } from "react-icons/bs";
 
 export function BodyMovie(props) {
+  const { movie } = props;
   const [videos, setVideos] = useState(null);
   const [activeTab, setActiveTab] = useState("trailer");
   const handleTabclick = (tab) => {
     setActiveTab(tab);
   };
-  const { movie } = props;
   useEffect(() => {
     (async () => {
       try {

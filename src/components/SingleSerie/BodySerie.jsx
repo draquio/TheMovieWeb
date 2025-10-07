@@ -5,12 +5,12 @@ import { BsPlayFill } from "react-icons/bs";
 import { Seasons } from "../Seasons";
 
 export function BodySerie(props) {
+  const { serie } = props;
   const [videos, setVideos] = useState(null);
   const [activeTab, setActiveTab] = useState("trailer");
   const handleTabclick = (tab) => {
     setActiveTab(tab);
   };
-  const { serie } = props;
   useEffect(() => {
     (async () => {
       try {
@@ -19,7 +19,7 @@ export function BodySerie(props) {
         setVideos(response);
       } catch (error) {}
     })();
-  }, []);
+  }, [serie.id]);
   if (!videos)
     return <span className="loading loading-spinner loading-lg"></span>;
   return (
