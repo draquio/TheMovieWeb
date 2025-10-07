@@ -111,4 +111,26 @@ export class Serie {
       console.error(error);
     }
   }
+
+    async getRecommendationSeries(id, limit = 4) {
+      try {
+        const url = `${ENV.Api_url}/tv/${id}/${ENV.Api_Routes.recommendation}?language=es-ES`;
+        const params = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${ENV.Token}`,
+          },
+        };
+        const response = await fetch(url, params);
+        if (response.status === 200) {
+          const result = await response.json();
+          const mapseries = formatAllSeries(result.results);
+          return mapseries.slice(0, limit);
+        }
+        throw response;
+      } catch (error) {
+        console.error(error);
+      }
+    }
 }

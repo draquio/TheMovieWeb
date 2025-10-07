@@ -1,0 +1,1 @@
+export {RecommendationSerie} from "./RecomendationSerie"

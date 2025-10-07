@@ -5,6 +5,7 @@ import { BodySerie } from "./BodySerie";
 import { Cast as CastClass } from "../../services/Cast";
 import { ENV } from "../../utils";
 import { Loader } from "../Loader/Loader";
+import { FooterSerie } from "./FooterSerie";
 
 
 export function SingleSerie(props) {
@@ -34,13 +35,14 @@ export function SingleSerie(props) {
         console.error(error);
       }
     })();
-  }, []);
+  }, [id]);
   if (!serie && !cast) return <Loader />;
   return (
     <>
       <div className="bgtop"><img alt={`${serie.title} background`} src={`${ENV.Api_image_url_original}${serie.backdrop_path}`} /></div>
       <HeaderSerie cast={cast} serie={serie} />
       <BodySerie serie={serie} />
+      <FooterSerie id={serie.id} />
     </>
   );
 }
